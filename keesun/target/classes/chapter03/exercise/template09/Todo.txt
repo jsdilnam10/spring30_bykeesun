@@ -1,0 +1,5 @@
+콜백 재사용
+
+1. deleteAll()에서 콜백 코드 분리. - executeSql(String)
+
+2. executeSql()을 JdbcContext로 이동.

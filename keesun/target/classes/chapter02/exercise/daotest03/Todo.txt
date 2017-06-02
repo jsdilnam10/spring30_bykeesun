@@ -1,0 +1,7 @@
+deleteAll()과 getCount() 기능 추가 (테스트 결과 일관성 보장하기)
+
+1. userDao에 void deleteAll() 기능 추가
+
+2. userDao에 int getCount() 기능 추가
+
+3. addAndGet() 테스트에 적용

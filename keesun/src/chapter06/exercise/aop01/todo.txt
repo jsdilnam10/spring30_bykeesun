@@ -1,0 +1,23 @@
+UserService 코드 문제점
+
+	public void upgradeLevels() throws Exception {
+		TransactionStatus status =
+			transactionManager.getTransaction(new DefaultTransactionDefinition());
+		try {
+			List<User> users = userDao.getAll();
+			for (User user : users) {
+				if (canUpgradeLevel(user)) {
+					upgradeLevel(user);
+				}
+			}
+			transactionManager.commit(status);
+		} catch (Exception e) {
+			transactionManager.rollback(status);
+			throw e;
+		} 
+	}
+
+	
+- try/catch
+- 트랜잭션 코드 반복
+	

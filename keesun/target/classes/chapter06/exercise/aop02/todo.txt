@@ -1,0 +1,17 @@
+UserServiceTx 적용(프록시 패턴 적용)
+
+1. UserService 인터페이스 도입
+
+public interface UserService { 
+  void add(User user); 
+  void upgradeLevels(); 
+} 
+
+2. UserServiceImpl에서 트랜잭션 코드 제거
+
+3. UserServiceTx 클래스 만들기
+- UserService 인터페이스 구현하기
+- UserService 타입의 멤버 변수 userService 선언
+- 트랜잭션 코드 추가
+
+4. 빈 설정 변경

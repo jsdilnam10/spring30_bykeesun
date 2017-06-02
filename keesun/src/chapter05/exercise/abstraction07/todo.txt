@@ -1,0 +1,13 @@
+메일 서비스 추상화 2
+
+1. 스프링 JavaMailSenderImpl 적용.
+- MailSender 인터페이스 구현체인 JavaMailSenderImpl 사용.
+
+2. DI 구조로 변경.
+
+3. 테스트용 MailSender 구현 및 적용.
+- 테스트용 MailSender인 MockMailSender를 구현합니다.
+- UserService를 테스트 할 때 MockMailSender 객체를 주입해 줍니다.
+
+
+ 

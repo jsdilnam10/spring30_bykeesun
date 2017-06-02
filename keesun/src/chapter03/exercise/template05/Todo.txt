@@ -1,0 +1,5 @@
+add()에도 전략 패턴 적용 (전략 클래스 추가 정보)
+
+1. StatementStrategy를 구현하는 AddSatement 구현하기
+
+2. UserDao의 add()에 적용하기

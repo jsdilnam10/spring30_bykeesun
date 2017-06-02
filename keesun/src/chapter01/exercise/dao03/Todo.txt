@@ -1,0 +1,5 @@
+관심사분리: Connection 생성 코드를 분리하라.
+
+1. Connection 생성 작업을 별도의 메서드에게 담당시키자.
+
+- Extract Method 리팩토링 사용하기.

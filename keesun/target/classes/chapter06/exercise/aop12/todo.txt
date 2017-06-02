@@ -1,0 +1,20 @@
+@Transactional 애노테이션 도입
+
+1. 기존의 aop와 tx 설정 삭제
+
+	<aop:config>
+		<aop:advisor advice-ref="transactionAdvice"
+			pointcut="bean(*Service)" />
+	</aop:config>
+
+	<tx:advice id="transactionAdvice" >   
+  		<tx:attributes>   
+	    	<tx:method name="get*" read-only="true" /> 
+	    	<tx:method name="*" /> 
+	  	</tx:attributes> 
+	</tx:advice> 
+	
+2. <tx:annotation-driven /> 추가
+
+3. UserService에 @Transactional 애노테이션 추가
+

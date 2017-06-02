@@ -1,0 +1,7 @@
+Setter 주입 사용하기: UserDao에 setter를 사용하여 ConnectionMaker를 주입하자.
+
+1. UserDao 생성자를 삭제한다.
+
+2. UserDao에 ConnectionFacotry에 대한 세터를 추가한다.
+
+3. DaoFactory에서 객체를 주입할 때 세터를 사용하도록 수정한다.

@@ -1,0 +1,6 @@
+예외 상황 테스트
+
+1. getUserFailure() 테스트 작성
+- DB에 들어있지 않은 ID로 get()을 호출했을 때 EmptyResultDataAccessException 발생하는지 확인.
+
+2. get() 코드 수정

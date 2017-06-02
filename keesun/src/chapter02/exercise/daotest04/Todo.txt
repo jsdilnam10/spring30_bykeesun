@@ -1,0 +1,13 @@
+테스트 보완하기
+
+1. User(id, name, password) 생성자 추가
+
+2. addAndGet() 테스트에서 새로 추가한 생성자로 수정.
+
+3. getCount() 테스트 작성
+- User 객체 세개 만들고
+- 하나씩 add()한 다음 getCount()로 검증
+
+4. addAndGet() 테스트 보완
+- User 객체 두개를 추가한 다음
+- 각각을 가져와서 데이터 확인

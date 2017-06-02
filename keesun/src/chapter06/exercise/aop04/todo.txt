@@ -1,0 +1,7 @@
+팩토리 빈 적용하기
+
+1. FactoryBean 구현체 TxProxyFactoryBean 만들기
+
+2. 빈 설정 변경하기
+
+3. 테스트 코드 수정

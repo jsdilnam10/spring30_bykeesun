@@ -1,0 +1,17 @@
+초난감 DAO 만들기
+
+1. User 클래스 만들기
+2. users 테이블 만들기
+
+create table users ( 
+ id varchar(10) primary key,  
+ name varchar(20) not null, 
+ password varchar(10) not null 
+) 
+ 
+3. UserDao 클래스 만들기
+
+db.driver=org.postgresql.Driver
+db.url=jdbc:postgresql://localhost/spring30
+db.username=spring30
+db.password=spring30

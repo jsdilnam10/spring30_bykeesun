@@ -1,0 +1,11 @@
+DataSource 도입 : ConnectionMaker 대신 DataSource를 사용하도록 수정
+
+1. UserDao에서 ConnectionMaker를 빼고 DataSource를 사용하도록 수정한다.
+
+2. 빈 설정정보를 수정한다.
+
+	- DaoFactory에 dataSource() 설정을 추가한다.
+	
+	- daoContext.xml 파일에 빈 설정정보를 변경한다..
+
+3. UserDaoTest에서 애노테이션 또는 XML 설정정보를 사용하는 ApplicationContext를 사용하도록 수정한다.

@@ -1,0 +1,26 @@
+tx 네임스페이스 활용 및 트랜잭션 속성 테스트
+
+1. UserService 인터페이스 기능 추가
+
+User get(String id); 
+List<User> getAll(); 
+void deleteAll(); 
+void update(User user);
+
+2. UserServiceImpl 구현
+
+public void deleteAll() {  userDao.deleteAll(); } 
+public User get(String id) { return userDao.get(id); } 
+public List<User> getAll() { return userDao.getAll(); } 
+public void update(User user) { userDao.update(user); }
+
+3. tx 네임스페이스 설정 간편화
+
+<tx:advice id="transactionAdvice"> 
+  <tx:attributes> 
+    <tx:method name="get*" read-only="true"/> 
+    <tx:method name="*" /> 
+  </tx:attributes> 
+</tx:advice> 
+
+4. 테스트

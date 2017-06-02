@@ -1,0 +1,19 @@
+upgradeUsers()에 트랜잭션 적용2
+
+1. PlatformTransactionManager 사용하도록 UserService.upgradeLevels() 수정.
+
+	PlatformTransactionManager transactionManager = 
+		new DataSourceTransactionManager(dataSource);
+   
+	TransactionStatus status =
+		transactionManager.getTransaction(new DefaultTransactionDefinition());트랜잭션 시작 
+        
+2. 스프링 DI 적용
+- PlatformTransactionManager 주입 받을 수 있도록 수정.
+- DataSourceTransactionManager를 빈으로 설정.
+
+	
+
+
+
+ 

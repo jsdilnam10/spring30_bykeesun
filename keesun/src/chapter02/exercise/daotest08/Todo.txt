@@ -1,0 +1,16 @@
+테스트용 DataSource 사용하기 (DI와 테스트)
+
+1. 테스트용 DB/테이블 만들기
+- spring30test
+
+2. 테스트에서 DI 활용 방법 세 가지
+- 테스트 코드에 의한 DI
+	코드 내에서 임의로 DI 설정 변경 
+	@DirtiesContext
+- 테스트용 별도 설정 DI
+	testDaoContext.xml 작성
+	@ContextConfiguration 설정 변경
+- 컨테이너 없는 DI
+	@RunWith 삭제
+	@Autowired 삭제
+	손수 객체 생성 및 관계 설정

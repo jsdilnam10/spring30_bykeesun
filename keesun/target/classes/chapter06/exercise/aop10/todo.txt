@@ -1,0 +1,13 @@
+tx 네임스페이스 적용하기
+
+1. tx 네임스페이스 추가
+
+2. transactionAdvice 빈 설정 변경
+
+<tx:advice id="transactionAdvice" transaction-manager="transactionManager">   
+	<tx:attributes>   
+    	<tx:method name="get*" propagation="REQUIRED" read-only="true" timeout="30" /> 
+    	<tx:method name="upgrade*" propagation="REQUIRES_NEW" isolation="SERIALIZABLE" /> 
+    	<tx:method name="*" propagation="REQUIRED" /> 
+  	</tx:attributes> 
+</tx:advice> 

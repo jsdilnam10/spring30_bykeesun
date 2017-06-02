@@ -1,0 +1,15 @@
+스프링 JdbcTemplate 도입
+
+1. jdbcTemplate.update() 사용해서 deleteAll() 수정
+- PreparedStatementCreator 사용.
+- String 매개변수 사용.
+
+2. jdbcTemplate.update() 사용해서 add() 수정.
+- String, Object[] 사용.
+
+3. jdbcTemplate.query() 사용해서 getCount() 수정
+- PreparedStatementCreator와 ResultSetExtractor 사용.
+
+4. jdbcTemplate.queryForInt() 사용해서 getCounr() 수정
+
+5. jdbcTemplate.queryForObject() 사용해서 get() 수정

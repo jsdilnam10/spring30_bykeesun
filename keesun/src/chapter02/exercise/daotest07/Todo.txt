@@ -1,0 +1,11 @@
+스프링 테스트 도입
+
+1. ApplicationContext 생성 코드 제거
+
+2. @RunWith(SpringJUnit4ClassRunner.class) 추가
+
+3. @ContextConfiguration() 추가
+
+4. @Autowired ApplicationContext applicationContext 필드 추가
+
+5. 4번 작업 삭제하고 UserDao 앞에 @Autowired 추가

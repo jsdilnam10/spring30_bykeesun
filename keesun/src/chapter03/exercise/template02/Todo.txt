@@ -1,0 +1,6 @@
+SQLException 예외처리
+
+1. deleteAll() 예외 처리
+
+2. getCount() 예외 처리
+	

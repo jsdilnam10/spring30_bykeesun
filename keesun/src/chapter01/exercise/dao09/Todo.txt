@@ -1,0 +1,7 @@
+스프링 @IoC 도입: DaoFactory를 스프링 빈 설정정보로 사용하자.
+
+1. DaoFactory 클래스에 @Configuration을 추가한다.
+
+2. userDao()와 connectionMaker()에 @Bean을 추가한다.
+
+3. UserDaoTest에서 스프링 ApplicationContext를 사용하도록 수정한다.

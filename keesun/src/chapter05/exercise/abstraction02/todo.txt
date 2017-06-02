@@ -1,0 +1,21 @@
+레벨 관리 기능 추가
+
+1. Level enum 추가
+2. User에 level, login, recommend 속성 추가
+	- 생성자에 매개변수 추가
+	- getter/setter 추가
+3. UserDao에 수정
+	- userMapper 수정
+	- add() 수정
+	- 테이블에 컬럼 추가(level-smallint, login-integer, recommend-integer)
+4. UserDao.update() 기능 추가
+	- UserDaoTest 테스트 코드 추가
+	- UserDao 기능 추
+5. UserService 추가
+	- UserService 클래스 추가
+	- UserDao 멤버 추가 및 세터 추가
+	- 빈 설정 추가
+6. UserServiceTest 추가
+	- @Autowired를 사용해서 UserService 빈 가져오기 확인
+7. UserService.upgradeUsers() 기능 추가
+

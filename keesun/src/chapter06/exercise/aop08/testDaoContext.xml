@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="userDao" class="chapter06.exercise.aop08.UserDaoJdbc">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<aop:config>
+		<aop:advisor advice-ref="transactionAdvice" pointcut="execution(* *..*ServiceImpl.upgrade*(..))"/>
+	</aop:config>
+	
+	<bean id="transactionAdvice" class="chapter06.exercise.aop08.TransactionAdvice">
+		<property name="transactionManager" ref="transactionManager"/>
+	</bean>
+
+	<bean id="userService" class="chapter06.exercise.aop08.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+	
+	<bean id="testUserService" class="chapter06.exercise.aop08.UserServiceTest$TestUserServiceImpl" parent="userService" />
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+		<property name="driverClass" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://localhost/spring30" />
+		<property name="username" value="spring30" />
+		<property name="password" value="spring30" />
+	</bean>
+	
+	<bean id="mailSender" class="chapter06.exercise.aop08.DummyMailSender"/>
+
+</beans>

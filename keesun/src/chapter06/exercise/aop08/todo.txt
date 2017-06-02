@@ -1,0 +1,11 @@
+aop 네임스페이스 적용하기
+
+1. aop 네임스페이스 추가
+
+2. <aop:config>, <aop:pointcut>, <aop:advisor> 사용하기
+
+3. <aop:pointcut> 생략하기
+
+	<aop:config>
+		<aop:advisor advice-ref="transactionAdvice" pointcut="execution(* *..*ServiceImpl.upgrade*(..))"/>
+	</aop:config>

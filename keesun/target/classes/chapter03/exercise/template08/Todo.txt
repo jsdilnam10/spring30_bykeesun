@@ -1,0 +1,5 @@
+수동 DI 적용
+
+1. JdbcContext를 빈 설정에서 제거한다.
+
+2. setDataSource에서 직접 JdbcContext를 생성하고 dataSource를 주입해준다. 

@@ -1,0 +1,58 @@
+upgradeUsers()에 트랜잭션 적용2
+
+1. 다음 코드 사용해서 upgradeAllOrNothing 테스트 만들기
+
+	@Test
+	public void upgradeAllOrNothing() throws Exception {
+		UserService testUserService = new TestUserService(users.get(3).getId());
+		testUserService.setUserDao(this.userDao);
+		testUserService.setDataSource(this.dataSource);
+
+		userDao.deleteAll();
+		for (User user : users)
+			userDao.add(user);
+
+		try {
+			testUserService.upgradeLevels();
+			fail("TestUserServiceException expected");
+		} catch (TestUserServiceException e) {
+		}
+
+		checkLevelUpgraded(users.get(1), false);
+	}
+
+	static class TestUserService extends UserService {
+		private String id;
+
+		private TestUserService(String id) {
+			this.id = id;
+		}
+
+		protected void upgradeLevel(User user) {
+			if (user.getId().equals(this.id))
+				throw new TestUserServiceException();
+			super.upgradeLevel(user);
+		}
+	}
+
+	static class TestUserServiceException extends RuntimeException {
+	}
+
+2. 스프링 트랜잭션 동기화 사용해서 upgradeLevels() 수정하기
+
+		TransactionSynchronizationManager.initSynchronization();
+		Connection c = DataSourceUtils.getConnection(dataSource);
+		c.setAutoCommit(false);
+		try {
+			...
+			c.commit();
+		} catch {
+			c.rollback();
+			throw e;
+		} finally {
+			DataSourceUtils.releaseConnection(c, dataSource);
+			TransactionSynchronizationManager.unbindResource(this.dataSource);
+			TransactionSynchronizationManager.clearSynchronization();
+		}
+		
+3. 테스트 실행 및 확인		

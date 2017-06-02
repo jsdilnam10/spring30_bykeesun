@@ -1,0 +1,22 @@
+TransactionInterceptor 적용하기
+
+1. TransactionAdvice 제거
+
+2. TransactionInterceptor 빈 설정
+
+<bean id="transactionAdvice"  
+        class="org.springframework.transaction.interceptor.TransactionInterceptor"> 
+  <property name="transactionManager" ref="transactionManager" /> 
+  <property name="transactionAttributes"> 
+    <props> 
+      <prop key="get*">PROPAGATION_REQUIRED,readOnly,timeout_30</prop>   
+      <prop key="upgrade*">PROPAGATION_REQUIRES_NEW,ISOLATION_SERIALIZABLE</prop>  
+      <prop key="*">PROPAGATION_REQUIRED</prop>  
+    </props> 
+  </property> 
+</bean> 
+
+3. bean 포인트컷 표현식 사용하기
+
+bean(*Service)
+ 

@@ -1,0 +1,8 @@
+upgradeUsers()에 트랜잭션 적용1
+
+1. JDBC Connection 트랜잭션 처리하기
+
+2. Service에서 Connection을 생성하고 DAO로 전달한다.
+	- DAO와 Service의 모든 메서드에 Connection을 전달해야 한다.
+	- JdbcTemplate을 사용하지 못한다.
+	- UserDao 인터페이스가 JDBC API에 종속적이게 된다.

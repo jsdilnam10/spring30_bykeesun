@@ -1,0 +1,7 @@
+getAll() 구현하기
+
+1. getAll() 테스트 추가하기
+- user 픽스처 객체를 하나씩를 넣으면서 getAll()해서 사이즈 및 가져온 사용자 정보 확인
+
+2. getAll() 구현하기
+- jdbcTemplate.query()

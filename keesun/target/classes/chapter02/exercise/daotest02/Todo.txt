@@ -1,0 +1,9 @@
+JUnit 도입 (검증 자동화)
+
+1. main을 @Test로 대체하기
+
+2. assertThat()으로 검증하기
+
+3. JUnitCore.main()으로 테스트 실행하기
+
+4. IDE를 사용하여 JUnit 테스트 실행하기

@@ -1,0 +1,17 @@
+메일 서비스 추상화 1
+
+1. User에 email 속성 추가
+- 테이블 수정
+- User 클래스 수정
+- UserDaoJdbc 클래스 수정
+
+2. private void sendUpgradeEMail(user); 추가
+- JavaMail API 사용.
+
+3. upgradeLevel(User user) 메서드에서 사용.
+
+	
+
+
+
+ 

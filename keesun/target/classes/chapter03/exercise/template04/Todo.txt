@@ -1,0 +1,11 @@
+전략 패턴 적용
+
+1. StatementStrategy 인터페이스 만들기
+
+2. deleteAll() 기능을 구현하는 DeleteAllStatement 구현체 만들기
+
+3. UserDao에서 DeleteAllStatement 구현체 사용하기
+
+4. deleteAll()에서 컨텍스트(변하지 않는 부분) 빼내기 - jdbcContextWithStatementStrategy(StatementStrategy)
+
+5. jdbcContextWithStatementStrategy 사용하도록 코드 수정

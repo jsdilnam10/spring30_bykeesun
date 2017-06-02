@@ -1,0 +1,14 @@
+자동 프록시 적용
+
+1. NameMatchMethodPointcut을 확장해서 클래스도 확인할 수 있는 클래스 작성.
+
+2. NameMatchMethodPointcut 빈 등록하기
+
+3. DefaultAdvisorAutoProxyCreator 빈 등록하기
+
+4. userService id를 가진 ProxyFactoryBean 설정 삭제
+
+5. 테스트
+- TestUserServiceImpl로 이름을 변경하고 static 클래스를 빈으로 등록하기
+- parent 속성을 사용해서 userService의 빈설정 상속 받기
+ 
